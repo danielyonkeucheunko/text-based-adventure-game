@@ -13,14 +13,14 @@
  * @version October 21, 2012
  *
  * @author Daniel Yonkeu-Cheunko (101263845)
- S* @version January 18th, 2024
+ * @version January 18th, 2024
  */
 
 public class CommandWords
 {
     // a constant array that holds all valid command words
     private static final String[] validCommands = {
-        "go", "quit", "help", "look", "eat", "back", "stackBack"
+        "go", "quit", "help", "look", "eat", "back", "stackBack", "take", "drop"
     };
 
     /**

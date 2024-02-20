@@ -30,6 +30,7 @@ public class Game
     private Room currentRoom;
     private Room previousRoom;
     private Stack<Room> previousRooms;
+    private Item currentItem;
 
         
     /**
@@ -40,6 +41,7 @@ public class Game
         createRooms();
         parser = new Parser();
         previousRooms = new Stack<Room>();
+        currentItem = null;
     }
 
     /**
@@ -52,19 +54,20 @@ public class Game
 
         // create the rooms
         outside = new Room("outside the main entrance of the university", items = new ArrayList<Item>());
-        outside.addItem("stick", 5);
+        outside.addItem("stick", "tiny stick on the ground",5);
+        outside.addItem("leaf", "small maple leaf", 0.1);
         theatre = new Room("in a lecture theatre", items = new ArrayList<Item>());
-        theatre.addItem("microphone", 5);
-        theatre.addItem("fake sword", 3);
+        theatre.addItem("microphone","", 5);
+        theatre.addItem("sword","a fake prop sword", 3);
         pub = new Room("in the campus pub", items = new ArrayList<Item>());
-        pub.addItem("beer", 6);
-        pub.addItem("car keys", 2);
+        pub.addItem("soda", "an empty can of pepsi", 6);
+        pub.addItem("carkeys", "car keys belonging to a beamer", 2);
         lab = new Room("in a computing lab", items = new ArrayList<Item>());
-        lab.addItem("mouse", 1);
-        lab.addItem("keyboard", 10);
+        lab.addItem("mouse","computer mouse", 1);
+        lab.addItem("keyboard","computer keyboard", 10);
         office = new Room("in the computing admin office", items = new ArrayList<Item>());
-        office.addItem("paper clip", 0.5);
-        office.addItem("pen", 0.9);
+        office.addItem("paperclip","random paper clip on the desk", 0.5);
+        office.addItem("pen","dry pen", 0.9);
         
         // initialise room exits
         outside.setExit("east", theatre);
@@ -111,7 +114,7 @@ public class Game
         System.out.println("World of Zuul is a new, incredibly boring adventure game.");
         System.out.println("Type 'help' if you need help.");
         System.out.println();
-        System.out.println(currentRoom.getLongDescription());
+        printRoomAndCarry();
     }
 
     /**
@@ -138,6 +141,8 @@ public class Game
             case "eat" -> eat(command);
             case "back" -> back(command);
             case "stackBack" -> stackBack(command);
+            case "take" -> take(command);
+            case "drop" -> drop(command);
         }
         // else command not recognised.
         return wantToQuit;
@@ -185,7 +190,7 @@ public class Game
             previousRoom = currentRoom;
             previousRooms.push(previousRoom);
             currentRoom = nextRoom;
-            System.out.println(currentRoom.getLongDescription());
+            printRoomAndCarry();
         }
     }
 
@@ -221,7 +226,8 @@ public class Game
             return;
         }
 
-        System.out.println(currentRoom.getLongDescription());
+        printRoomAndCarry();
+
     }
 
     /**
@@ -261,7 +267,7 @@ public class Game
         previousRoom = temp;
 
         System.out.println("You have been sent back!");
-        System.out.println(currentRoom.getLongDescription());
+        printRoomAndCarry();
 
     }
 
@@ -284,6 +290,52 @@ public class Game
         currentRoom = previousRooms.pop();
 
         System.out.println("You have been sent back!");
+        printRoomAndCarry();
+    }
+
+    private void take(Command command) {
+        if (!command.hasSecondWord()) {
+            System.out.println("take what?");
+            return;
+        }
+
+        String wordItem = command.getSecondWord();
+
+        if (currentItem == null) {
+            Item item = currentRoom.removeItem(wordItem);
+            if (item == null) {
+                System.out.println("That item is not in the room");
+            } else {
+                System.out.println("You picked up a " + item.getName());
+                currentItem = item;
+            }
+        } else {
+            System.out.println("You are already holding something");
+        }
+    }
+
+    private void drop(Command command) {
+        if (command.hasSecondWord()) {
+            System.out.println("take what?");
+            return;
+        }
+
+        if (currentItem == null) {
+            System.out.println("You have nothing to drop.");
+        } else {
+            System.out.println("You have dropped a " + currentItem.getName());
+            currentRoom.addItem(currentItem);
+            currentItem = null;
+        }
+    }
+
+    public void printRoomAndCarry() {
         System.out.println(currentRoom.getLongDescription());
+
+        if (currentItem == null) {
+            System.out.println("You are not holding anything.");
+        } else {
+            System.out.println("You are holding a " + currentItem.getName());
+        }
     }
 }

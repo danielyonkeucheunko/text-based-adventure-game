@@ -17,15 +17,18 @@ public class Item {
     private String description;
     private double weight;
 
+    private String name;
+
     /**
      * Create an item described with "description" that weighs "weight" kilograms.
      *
      * @param description The item's description.
      * @param weight The item's weight.
      */
-    public Item(String description, double weight) {
+    public Item(String name, String description, double weight) {
         this.description = description;
         this.weight = weight;
+        this.name = name;
     }
 
     /**
@@ -35,7 +38,11 @@ public class Item {
      * @return a string describing the item
      */
     public String getDescription() {
-        return "a " + this.description + " that weighs " + this.weight + "kg.";
+        return this.name + ": a " + this.description + " that weighs " + this.weight + "kg.";
+    }
+
+    public String getName() {
+        return this.name;
     }
 
 
