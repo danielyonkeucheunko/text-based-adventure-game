@@ -52,19 +52,19 @@ public class Game
 
         // create the rooms
         outside = new Room("outside the main entrance of the university", items = new ArrayList<Item>());
-        outside.addItem("stick", 5);
+        outside.addItem("stick", "",5);
         theatre = new Room("in a lecture theatre", items = new ArrayList<Item>());
-        theatre.addItem("microphone", 5);
-        theatre.addItem("fake sword", 3);
+        theatre.addItem("microphone","", 5);
+        theatre.addItem("fake sword","", 3);
         pub = new Room("in the campus pub", items = new ArrayList<Item>());
-        pub.addItem("beer", 6);
-        pub.addItem("car keys", 2);
+        pub.addItem("beer", "", 6);
+        pub.addItem("car keys", "", 2);
         lab = new Room("in a computing lab", items = new ArrayList<Item>());
-        lab.addItem("mouse", 1);
-        lab.addItem("keyboard", 10);
+        lab.addItem("mouse","", 1);
+        lab.addItem("keyboard","", 10);
         office = new Room("in the computing admin office", items = new ArrayList<Item>());
-        office.addItem("paper clip", 0.5);
-        office.addItem("pen", 0.9);
+        office.addItem("paper clip","", 0.5);
+        office.addItem("pen","", 0.9);
         
         // initialise room exits
         outside.setExit("east", theatre);
@@ -138,6 +138,7 @@ public class Game
             case "eat" -> eat(command);
             case "back" -> back(command);
             case "stackBack" -> stackBack(command);
+            case "take" -> take(command);
         }
         // else command not recognised.
         return wantToQuit;
@@ -285,5 +286,18 @@ public class Game
 
         System.out.println("You have been sent back!");
         System.out.println(currentRoom.getLongDescription());
+    }
+
+    private void take(Command command) {
+        if (!command.hasSecondWord()) {
+            System.out.println("take what?");
+            return;
+        }
+
+        String item = command.getSecondWord();
+
+
+
+
     }
 }
