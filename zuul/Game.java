@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Stack;
 
 /**
@@ -31,6 +32,8 @@ public class Game
     private Room previousRoom;
     private Stack<Room> previousRooms;
     private Item currentItem;
+    private int numberOfPickups;
+    private final int PICKUPS_PER_APPLE = 5;
 
         
     /**
@@ -42,6 +45,7 @@ public class Game
         parser = new Parser();
         previousRooms = new Stack<Room>();
         currentItem = null;
+        numberOfPickups = 0;
     }
 
     /**
@@ -246,6 +250,7 @@ public class Game
 
         if (currentItem.getName() == "apple") {
             System.out.println("You have eaten and are no longer hungry!");
+            numberOfPickups += PICKUPS_PER_APPLE;
             currentItem = null;
         } else {
             System.out.println("You are not carrying food.");
@@ -309,6 +314,12 @@ public class Game
 
         String wordItem = command.getSecondWord();
 
+
+        if (numberOfPickups == 0 && !Objects.equals(wordItem, "apple")) {
+            System.out.println("You must take and eat an apple before taking anything else.");
+            return;
+        }
+
         if (currentItem == null) {
             Item item = currentRoom.removeItem(wordItem);
             if (item == null) {
@@ -316,6 +327,9 @@ public class Game
             } else {
                 System.out.println("You picked up a " + item.getName());
                 currentItem = item;
+                if (!Objects.equals(wordItem, "apple")){
+                    numberOfPickups--;
+                }
             }
         } else {
             System.out.println("You are already holding something");
