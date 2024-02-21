@@ -56,12 +56,14 @@ public class Game
         outside = new Room("outside the main entrance of the university", items = new ArrayList<Item>());
         outside.addItem("stick", "tiny stick on the ground",5);
         outside.addItem("leaf", "small maple leaf", 0.1);
+        outside.addItem("apple","mysterious apple", 0.25);
         theatre = new Room("in a lecture theatre", items = new ArrayList<Item>());
-        theatre.addItem("microphone","", 5);
-        theatre.addItem("sword","a fake prop sword", 3);
+        theatre.addItem("microphone","broken microphone", 5);
+        theatre.addItem("sword","fake prop sword", 3);
         pub = new Room("in the campus pub", items = new ArrayList<Item>());
-        pub.addItem("soda", "an empty can of pepsi", 6);
+        pub.addItem("soda", "empty can of pepsi", 6);
         pub.addItem("carkeys", "car keys belonging to a beamer", 2);
+        pub.addItem("apple","mysterious apple", 0.25);
         lab = new Room("in a computing lab", items = new ArrayList<Item>());
         lab.addItem("mouse","computer mouse", 1);
         lab.addItem("keyboard","computer keyboard", 10);
@@ -242,7 +244,13 @@ public class Game
             return;
         }
 
-        System.out.println("You have eaten and are no longer hungry!");
+        if (currentItem.getName() == "apple") {
+            System.out.println("You have eaten and are no longer hungry!");
+            currentItem = null;
+        } else {
+            System.out.println("You are not carrying food.");
+        }
+
     }
 
     /**
@@ -316,7 +324,7 @@ public class Game
 
     private void drop(Command command) {
         if (command.hasSecondWord()) {
-            System.out.println("take what?");
+            System.out.println("drop what?");
             return;
         }
 
