@@ -34,6 +34,7 @@ public class Game
     private Item currentItem;
     private int numberOfPickups;
     private final int PICKUPS_PER_APPLE = 5;
+    private Room chargedRoom;
 
         
     /**
@@ -55,12 +56,14 @@ public class Game
     {
         Room outside, theatre, pub, lab, office;
         ArrayList<Item> items;
+        Beamer beamer = new Beamer("Beamer", "mysterious intergalactic gun", 1, false);
 
         // create the rooms
         outside = new Room("outside the main entrance of the university", items = new ArrayList<Item>());
         outside.addItem("stick", "tiny stick on the ground",5);
         outside.addItem("leaf", "small maple leaf", 0.1);
         outside.addItem("apple","mysterious apple", 0.25);
+        outside.addItem(beamer);
         theatre = new Room("in a lecture theatre", items = new ArrayList<Item>());
         theatre.addItem("microphone","broken microphone", 5);
         theatre.addItem("sword","fake prop sword", 3);
@@ -74,6 +77,7 @@ public class Game
         office = new Room("in the computing admin office", items = new ArrayList<Item>());
         office.addItem("paperclip","random paper clip on the desk", 0.5);
         office.addItem("pen","dry pen", 0.9);
+        office.addItem(beamer);
         
         // initialise room exits
         outside.setExit("east", theatre);
@@ -149,6 +153,8 @@ public class Game
             case "stackBack" -> stackBack(command);
             case "take" -> take(command);
             case "drop" -> drop(command);
+            case "charge" -> charge(command);
+            case "fire" -> fire(command);
         }
         // else command not recognised.
         return wantToQuit;
@@ -358,6 +364,38 @@ public class Game
             System.out.println("You are not holding anything.");
         } else {
             System.out.println("You are holding a " + currentItem.getName());
+        }
+    }
+
+    private void charge(Command command) {
+        if (command.hasSecondWord()) {
+            System.out.println("charge what?");
+            return;
+        }
+
+        if (currentItem instanceof Beamer) {
+            if (((Beamer) currentItem).chargeBeamer()) {
+                chargedRoom = currentRoom;
+            }
+        } else {
+            System.out.println("You must be holding a Beamer to charge it.");
+        }
+
+
+    }
+
+    private void fire(Command command) {
+        if (command.hasSecondWord()) {
+            System.out.println("fire what?");
+            return;
+        }
+
+        if (currentItem instanceof Beamer) {
+            if (((Beamer) currentItem).fireBeamer()) {
+                currentRoom = chargedRoom;
+                chargedRoom = null;
+                printRoomAndCarry();
+            }
         }
     }
 }
