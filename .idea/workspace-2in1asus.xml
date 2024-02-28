@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="20de2b0a-def1-478c-ae1b-0de3c5ff71f1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/zuul/TransporterRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/Beamer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/A01/Beamer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/A01/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/Beamer.java" beforeDir="false" afterPath="$PROJECT_DIR$/zuul/Beamer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/zuul/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/zuul/Room.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2b6YLzVGod3E4ZgObvLNS67NoDD" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "transporter-room",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Themu/OneDrive/School Work/Second Year - Semester 2/SYSC 2004/Projects/New folder"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.1-openjdk-21.0.1-4caba194b151-23eed401" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="20de2b0a-def1-478c-ae1b-0de3c5ff71f1" name="Changes" comment="" />
+      <created>1705536944219</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1705536944219</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="work-repo" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

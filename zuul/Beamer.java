@@ -14,7 +14,7 @@ public class Beamer extends Item {
     }
 
     public boolean chargeBeamer() {
-        if (!charged) {
+        if (!isCharged()) {
             System.out.println("Beamer successfully charged!");
             charged = true;
             return true;
@@ -25,7 +25,7 @@ public class Beamer extends Item {
     }
 
     public boolean fireBeamer() {
-        if (charged) {
+        if (isCharged()) {
             System.out.println("Beamer has been fired!");
             charged = false;
             return true;
