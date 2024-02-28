@@ -55,26 +55,29 @@ public class Game
     private void createRooms()
     {
         Room outside, theatre, pub, lab, office;
+        TransporterRoom elevator;
         ArrayList<Item> items;
-        Beamer beamer = new Beamer("Beamer", "mysterious intergalactic gun", 1, false);
+        ArrayList<Room> rooms = new ArrayList<Room>();
+        Beamer beamer = new Beamer("beamer", "mysterious intergalactic gun", 1, false);
 
         // create the rooms
-        outside = new Room("outside the main entrance of the university", items = new ArrayList<Item>());
+        outside = new Room("outside the main entrance of the university", items = new ArrayList<Item>(), rooms);
         outside.addItem("stick", "tiny stick on the ground",5);
         outside.addItem("leaf", "small maple leaf", 0.1);
         outside.addItem("apple","mysterious apple", 0.25);
         outside.addItem(beamer);
-        theatre = new Room("in a lecture theatre", items = new ArrayList<Item>());
+        elevator = new TransporterRoom("elevator outside the main entrance of the university",items = new ArrayList<Item>(), rooms);
+        theatre = new Room("in a lecture theatre", items = new ArrayList<Item>(), rooms);
         theatre.addItem("microphone","broken microphone", 5);
         theatre.addItem("sword","fake prop sword", 3);
-        pub = new Room("in the campus pub", items = new ArrayList<Item>());
+        pub = new Room("in the campus pub", items = new ArrayList<Item>(), rooms);
         pub.addItem("soda", "empty can of pepsi", 6);
         pub.addItem("carkeys", "car keys belonging to a beamer", 2);
         pub.addItem("apple","mysterious apple", 0.25);
-        lab = new Room("in a computing lab", items = new ArrayList<Item>());
+        lab = new Room("in a computing lab", items = new ArrayList<Item>(), rooms);
         lab.addItem("mouse","computer mouse", 1);
         lab.addItem("keyboard","computer keyboard", 10);
-        office = new Room("in the computing admin office", items = new ArrayList<Item>());
+        office = new Room("in the computing admin office", items = new ArrayList<Item>(), rooms);
         office.addItem("paperclip","random paper clip on the desk", 0.5);
         office.addItem("pen","dry pen", 0.9);
         office.addItem(beamer);
@@ -83,6 +86,9 @@ public class Game
         outside.setExit("east", theatre);
         outside.setExit("south", lab);
         outside.setExit("west", pub);
+        outside.setExit("north", elevator);
+
+        elevator.setExit("south", outside);
 
         theatre.setExit("west", outside);
 
@@ -92,6 +98,12 @@ public class Game
         lab.setExit("east", office);
 
         office.setExit("west", lab);
+
+        rooms.add(outside);
+        rooms.add(theatre);
+        rooms.add(pub);
+        rooms.add(lab);
+        rooms.add(office);
 
         currentRoom = outside;  // start game outside
     }

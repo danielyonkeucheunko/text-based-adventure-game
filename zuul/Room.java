@@ -25,6 +25,7 @@ public class Room
     private String description;
     private HashMap<String, Room> exits;        // stores exits of this room.
     private ArrayList<Item> items;
+    public ArrayList<Room> rooms;
 
     /**
      * Create a room described "description". Initially, it has
@@ -33,11 +34,11 @@ public class Room
      * 
      * @param description The room's description.
      */
-    public Room(String description, List<Item> items)
-    {
+    public Room(String description, ArrayList<Item> items, ArrayList<Room> rooms) {
         this.description = description;
+        this.items = items;
+        this.rooms = rooms;
         exits = new HashMap<String, Room>();
-        this.items = new ArrayList<Item>();
     }
 
     /**
