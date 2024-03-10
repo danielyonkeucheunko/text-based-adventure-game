@@ -17,7 +17,7 @@ import java.util.*;
  * @version October 21, 2012
  *
  * @author Daniel Yonkeu-Cheunko (101263845)
- * @version January 18th, 2024
+ * @version March 9th, 2024
  */
 
 public class Room 
@@ -25,7 +25,7 @@ public class Room
     private String description;
     private HashMap<String, Room> exits;        // stores exits of this room.
     private ArrayList<Item> items;
-    public ArrayList<Room> rooms;
+    public static ArrayList<Room> rooms = new ArrayList<Room>();
 
     /**
      * Create a room described "description". Initially, it has
@@ -34,11 +34,11 @@ public class Room
      * 
      * @param description The room's description.
      */
-    public Room(String description, ArrayList<Item> items, ArrayList<Room> rooms) {
+    public Room(String description) {
         this.description = description;
-        this.items = items;
-        this.rooms = rooms;
+        items = new ArrayList<Item>();
         exits = new HashMap<String, Room>();
+        rooms.add(this);
     }
 
     /**
@@ -115,6 +115,7 @@ public class Room
      * Adds an item described as "description" with "weight" kilograms of weight
      * to a Room.
      *
+     * @param name The item's name.
      * @param description The item's description.
      * @param weight The item's weight.
      */
@@ -123,19 +124,37 @@ public class Room
         items.add(item);
     }
 
+    /**
+     * Adds an item to a Room.
+     *
+     * @param item Item to be added
+     */
     public void addItem(Item item) {
         items.add(item);
     }
 
+    /**
+     * Removes the item with the name "name".
+     *
+     * @param name name of the item
+     * @return The removed item or null if the item is not found.
+     */
     public Item removeItem(String name) {
-
         for (int i = 0; i < items.size(); i++) {
             if (Objects.equals(items.get(i).getName(), name)) {
                 return items.remove(i);
             }
         }
-
         return null;
+    }
+
+    /**
+     * Returns every room.
+     *
+     * @return ArrayList of all the rooms in the game.
+     */
+    public static ArrayList<Room> getRooms() {
+           return rooms;
     }
 }
 

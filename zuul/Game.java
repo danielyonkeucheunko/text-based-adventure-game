@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Stack;
 
@@ -22,7 +21,7 @@ import java.util.Stack;
  * @version October 21, 2012
  *
  * @author Daniel Yonkeu-Cheunko (101263845)
- * @version January 18th, 2024
+ * @version March 9th, 2024
  */
 
 public class Game 
@@ -47,6 +46,7 @@ public class Game
         previousRooms = new Stack<Room>();
         currentItem = null;
         numberOfPickups = 0;
+        chargedRoom = null;
     }
 
     /**
@@ -56,28 +56,27 @@ public class Game
     {
         Room outside, theatre, pub, lab, office;
         TransporterRoom elevator;
-        ArrayList<Item> items;
-        ArrayList<Room> rooms = new ArrayList<Room>();
         Beamer beamer = new Beamer("beamer", "mysterious intergalactic gun", 1, false);
+        Item apple = new Item("apple","mysterious apple", 0.25);
 
         // create the rooms
-        outside = new Room("outside the main entrance of the university", items = new ArrayList<Item>(), rooms);
+        outside = new Room("outside the main entrance of the university");
         outside.addItem("stick", "tiny stick on the ground",5);
         outside.addItem("leaf", "small maple leaf", 0.1);
-        outside.addItem("apple","mysterious apple", 0.25);
+        outside.addItem(apple);
         outside.addItem(beamer);
-        elevator = new TransporterRoom("elevator outside the main entrance of the university",items = new ArrayList<Item>(), rooms);
-        theatre = new Room("in a lecture theatre", items = new ArrayList<Item>(), rooms);
+        elevator = new TransporterRoom("elevator outside the main entrance of the university");
+        theatre = new Room("in a lecture theatre");
         theatre.addItem("microphone","broken microphone", 5);
         theatre.addItem("sword","fake prop sword", 3);
-        pub = new Room("in the campus pub", items = new ArrayList<Item>(), rooms);
+        pub = new Room("in the campus pub");
         pub.addItem("soda", "empty can of pepsi", 6);
         pub.addItem("carkeys", "car keys belonging to a beamer", 2);
-        pub.addItem("apple","mysterious apple", 0.25);
-        lab = new Room("in a computing lab", items = new ArrayList<Item>(), rooms);
+        pub.addItem(apple);
+        lab = new Room("in a computing lab");
         lab.addItem("mouse","computer mouse", 1);
         lab.addItem("keyboard","computer keyboard", 10);
-        office = new Room("in the computing admin office", items = new ArrayList<Item>(), rooms);
+        office = new Room("in the computing admin office");
         office.addItem("paperclip","random paper clip on the desk", 0.5);
         office.addItem("pen","dry pen", 0.9);
         office.addItem(beamer);
@@ -98,12 +97,6 @@ public class Game
         lab.setExit("east", office);
 
         office.setExit("west", lab);
-
-        rooms.add(outside);
-        rooms.add(theatre);
-        rooms.add(pub);
-        rooms.add(lab);
-        rooms.add(office);
 
         currentRoom = outside;  // start game outside
     }
@@ -240,7 +233,10 @@ public class Game
      *Prints a long description of the current room in the form:
      *     You are in the kitchen.
      *     Exits: north west
+     *     Items:
+     *         leaf: a small maple leaf that weighs 0.1kg
      *
+     *     You are not holding anything.
      *
      * @param command The command to be processed
      */
@@ -249,9 +245,7 @@ public class Game
             System.out.println("Look what?");
             return;
         }
-
         printRoomAndCarry();
-
     }
 
     /**
@@ -264,9 +258,12 @@ public class Game
         if (command.hasSecondWord()) {
             System.out.println("Eat what?");
             return;
+        } else if (currentItem == null) {
+            System.out.println("You have nothing to eat.");
+            return;
         }
 
-        if (currentItem.getName() == "apple") {
+        if (Objects.equals(currentItem.getName(), "apple")) {
             System.out.println("You have eaten and are no longer hungry!");
             numberOfPickups += PICKUPS_PER_APPLE;
             currentItem = null;
@@ -324,6 +321,12 @@ public class Game
         printRoomAndCarry();
     }
 
+    /**
+     * Makes the user take an item on the floor. If the user is out of pickups, the item isn't in the room,
+     * or the user is already holding an item it sends a warning.
+     *
+     * @param command The command to be processed.
+     */
     private void take(Command command) {
         if (!command.hasSecondWord()) {
             System.out.println("take what?");
@@ -331,7 +334,6 @@ public class Game
         }
 
         String wordItem = command.getSecondWord();
-
 
         if (numberOfPickups == 0 && !Objects.equals(wordItem, "apple")) {
             System.out.println("You must take and eat an apple before taking anything else.");
@@ -354,6 +356,11 @@ public class Game
         }
     }
 
+    /**
+     * Makes the user drop their current Item. Send a warning if the user isn't holding an item.
+     *
+     * @param command The command to be processed.
+     */
     private void drop(Command command) {
         if (command.hasSecondWord()) {
             System.out.println("drop what?");
@@ -369,7 +376,16 @@ public class Game
         }
     }
 
-    public void printRoomAndCarry() {
+    /**
+     * Prints a long description of the current room in the form:
+     *     You are in the kitchen.
+     *     Exits: north west
+     *     Items:
+     *         leaf: a small maple leaf that weighs 0.1kg
+     *
+     *     You are not holding anything.
+     */
+    private void printRoomAndCarry() {
         System.out.println(currentRoom.getLongDescription());
 
         if (currentItem == null) {
@@ -379,6 +395,12 @@ public class Game
         }
     }
 
+    /**
+     * Charges the Beamer. Sends a warning if the user isn't holding a Beamer
+     * or if the Beamer is already charged.
+     *
+     * @param command The command to be processed.
+     */
     private void charge(Command command) {
         if (command.hasSecondWord()) {
             System.out.println("charge what?");
@@ -392,10 +414,14 @@ public class Game
         } else {
             System.out.println("You must be holding a Beamer to charge it.");
         }
-
-
     }
 
+    /**
+     * Fires the Beamer. Sends a warning if the user isn't holding a Beamer
+     * and if the Beamer isn't charged.
+     *
+     * @param command The command to be processed.
+     */
     private void fire(Command command) {
         if (command.hasSecondWord()) {
             System.out.println("fire what?");
