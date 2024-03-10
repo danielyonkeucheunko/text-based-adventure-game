@@ -13,7 +13,7 @@
  * @version October 21, 2012
  *
  * @author Daniel Yonkeu-Cheunko (101263845)
- * @version January 18th, 2024
+ * @version March 9th, 2024
  */
 
 public class CommandWords
@@ -49,7 +49,7 @@ public class CommandWords
 
     /**
      * Returns a string of all valid command words in the form:
-     *      go quit help look eat back stackBack
+     *      go quit help look eat back stackBack take drop charge fire
      *
      * @return string of all valid commands
      */
