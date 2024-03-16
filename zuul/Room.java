@@ -25,7 +25,7 @@ public class Room
     private String description;
     private HashMap<String, Room> exits;        // stores exits of this room.
     private ArrayList<Item> items;
-    public static ArrayList<Room> rooms = new ArrayList<Room>();
+    protected static ArrayList<Room> rooms = new ArrayList<Room>();
 
     /**
      * Create a room described "description". Initially, it has
