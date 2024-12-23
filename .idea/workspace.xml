@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="20de2b0a-def1-478c-ae1b-0de3c5ff71f1" name="Changes" comment="Changed Room ArrayList from public to protected.">
+      <change afterPath="$PROJECT_DIR$/A02 UML.drawio.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/A01.iml" beforeDir="false" afterPath="$PROJECT_DIR$/A02.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/Beamer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/Beamer.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/Command.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/Command.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/CommandWords.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/CommandWords.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/Game.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/Game.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/Item.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/Item.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/Main.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/Parser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/Parser.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/README.TXT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/Room.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/Room.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/TransporterRoom.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/TransporterRoom.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/bluej.pkg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/bluej.pkh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/Command.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/CommandWords.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/Game.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/GameEngine.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/Item.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/Main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/Parser.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/Room.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/allclasses-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/allclasses-index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/allpackages-index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/element-list" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/help-doc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/index-all.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/jquery-ui.overrides.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/legal/ADDITIONAL_LICENSE_INFO" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/legal/ASSEMBLY_EXCEPTION" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/legal/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/legal/jquery.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/legal/jqueryUI.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/logfile.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/member-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/module-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/overview-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/package-list" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/package-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/packages.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/resources/glass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/resources/x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/script-dir/images/ui-bg_glass_55_fbf9ee_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/script-dir/images/ui-bg_glass_65_dadada_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/script-dir/images/ui-bg_glass_75_dadada_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/script-dir/images/ui-bg_glass_75_e6e6e6_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/script-dir/images/ui-bg_glass_95_fef1ec_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/script-dir/images/ui-bg_highlight-soft_75_cccccc_1x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/script-dir/images/ui-icons_222222_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/script-dir/images/ui-icons_2e83ff_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/script-dir/images/ui-icons_454545_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/script-dir/images/ui-icons_888888_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/script-dir/images/ui-icons_cd0a0a_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/script-dir/jquery-3.5.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/script-dir/jquery-ui.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/script-dir/jquery-ui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/script-dir/jquery-ui.structure.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/search.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/serialized-form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/stylesheet.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/tag-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/doc/type-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A01/package.bluej" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/Beamer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/Beamer.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/Command.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/Command.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/CommandWords.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/CommandWords.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/Game.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/Game.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/Item.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/Item.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/Main.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/Parser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/Parser.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/README.TXT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/Room.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/Room.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/TransporterRoom.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/TransporterRoom.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/bluej.pkg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/bluej.pkh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/Command.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/CommandWords.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/Game.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/GameEngine.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/Item.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/Main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/Parser.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/Room.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/allclasses-frame.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/allclasses-index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/allpackages-index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/element-list" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/help-doc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/index-all.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/jquery-ui.overrides.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/legal/ADDITIONAL_LICENSE_INFO" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/legal/ASSEMBLY_EXCEPTION" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/legal/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/legal/jquery.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/legal/jqueryUI.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/logfile.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/member-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/module-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/overview-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/package-list" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/package-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/package-summary.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/package-tree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/packages.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/resources/glass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/resources/x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/script-dir/images/ui-bg_glass_55_fbf9ee_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/script-dir/images/ui-bg_glass_65_dadada_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/script-dir/images/ui-bg_glass_75_dadada_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/script-dir/images/ui-bg_glass_75_e6e6e6_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/script-dir/images/ui-bg_glass_95_fef1ec_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/script-dir/images/ui-bg_highlight-soft_75_cccccc_1x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/script-dir/images/ui-icons_222222_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/script-dir/images/ui-icons_2e83ff_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/script-dir/images/ui-icons_454545_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/script-dir/images/ui-icons_888888_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/script-dir/images/ui-icons_cd0a0a_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/script-dir/jquery-3.5.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/script-dir/jquery-ui.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/script-dir/jquery-ui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/script-dir/jquery-ui.structure.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/search.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/serialized-form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/stylesheet.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/tag-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/doc/type-search-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuul/package.bluej" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;danielyonkeucheunko&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/danielyonkeu/SYSC-2004-A02.git&quot;,
+    &quot;accountId&quot;: &quot;a7239d90-f2a3-4efd-8b5e-b7cc0f3b6402&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2b6YLzVGod3E4ZgObvLNS67NoDD" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Themu/OneDrive/School Work/Second Year - Semester 2/SYSC 2004/LAB 11&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="A02" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="A02" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="20de2b0a-def1-478c-ae1b-0de3c5ff71f1" name="Changes" comment="" />
+      <created>1705536944219</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1705536944219</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Changed Room ArrayList from public to protected.">
+      <option name="closed" value="true" />
+      <created>1710616404764</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1710616404764</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="work-repo" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Changed Room ArrayList from public to protected." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed Room ArrayList from public to protected." />
+  </component>
+</project>
